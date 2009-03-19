@@ -77,7 +77,7 @@ module RelaxDB
     end
   
     def load_children
-      view_path = "_view/#{@client.class}/#{@relationship}?key=\"#{@client._id}\""
+      view_path = "_design/#{@client.class}/_view/#{@relationship}?key=\"#{@client._id}\""
       design_doc = @client.class
       view_name = @relationship
       map_function = ViewCreator.has_n(@target_class, @relationship_as_viewed_by_target)

@@ -20,7 +20,7 @@ describe RelaxDB::Query do
     
     it "should list design document and view name" do
       q = RelaxDB::Query.new("Zenith", "mount")
-      q.view_path.should == "_view/Zenith/mount"
+      q.view_path.should == "_design/Zenith/_view/mount"
     end
     
     it "should contain URL and JSON encoded key when the key has been set" do

@@ -47,7 +47,7 @@ module RelaxDB
     end
     
     def view_path
-      uri = "_view/#{@design_doc}/#{@view_name}"
+      uri = "_design/#{@design_doc}/_view/#{@view_name}"
       
       query = ""
       @@params.each do |param|
