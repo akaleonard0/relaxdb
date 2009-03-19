@@ -16,7 +16,7 @@ module RelaxDB
     end
     
     def __getobj__
-      view_path = "_view/#{@class_name}/all?reduce=false"
+      view_path = "_design/#{@class_name}/_view/all?reduce=false"
       map, reduce = ViewCreator.all(@class_name)
       
       RelaxDB.retrieve(view_path, @class_name, "all", map, reduce)
@@ -48,7 +48,7 @@ module RelaxDB
     # places (sorted_by_view, relaxdb and here)
     # Consolidation needed
     def size
-      view_path = "_view/#{@class_name}/all"
+      view_path = "_design/#{@class_name}/_view/all"
       map, reduce = ViewCreator.all(@class_name)
       
       begin
